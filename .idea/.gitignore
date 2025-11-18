@@ -8,3 +8,5 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Dont commit copilot.data.migration
+/.idea/copilot.data.migration*
