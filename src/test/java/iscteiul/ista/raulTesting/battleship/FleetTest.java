@@ -1,4 +1,4 @@
-package iscteiul.ista.battleship;
+package iscteiul.ista.raulTesting.battleship;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

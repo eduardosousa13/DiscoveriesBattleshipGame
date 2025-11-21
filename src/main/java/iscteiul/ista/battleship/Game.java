@@ -27,9 +27,6 @@ public class Game implements IGame {
         shots = new ArrayList<>();
         countInvalidShots = 0;
         countRepeatedShots = 0;
-        // Initialize hit/sink counters to avoid NullPointerException when getters are called
-        countHits = 0;
-        countSinks = 0;
         this.fleet = fleet;
     }
 
