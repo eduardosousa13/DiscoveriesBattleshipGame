@@ -1,5 +1,5 @@
 /**
- *
+ * Represents a Caravel ship, which has a size of 2.
  */
 package iscteiul.ista.battleship;
 
@@ -8,8 +8,11 @@ public class Caravel extends Ship {
     private static final String NAME = "Caravela";
 
     /**
+     * Creates a new Caravel ship with a given bearing and position.
      * @param bearing the bearing where the Caravel heads to
      * @param pos     initial point for positioning the Caravel
+     * @throws NullPointerException if the bearing is null
+     * @throws IllegalArgumentException if the bearing is invalid
      */
     public Caravel(Compass bearing, IPosition pos) throws NullPointerException, IllegalArgumentException {
         super(Caravel.NAME, bearing, pos);
@@ -34,10 +37,9 @@ public class Caravel extends Ship {
 
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.Ship#getSize()
+    /**
+     * Returns the size of the ship.
+     * @return The size of the ship.
      */
     @Override
     public Integer getSize() {

@@ -1,5 +1,5 @@
 /**
- *
+ * Represents a Galleon ship, which has a size of 5.
  */
 package iscteiul.ista.battleship;
 
@@ -8,8 +8,10 @@ public class Galleon extends Ship {
     private static final String NAME = "Galeao";
 
     /**
-     * @param bearing
-     * @param pos
+     * Creates a new Galleon ship with a given bearing and position.
+     * @param bearing The orientation of the ship.
+     * @param pos The starting position of the ship.
+     * @throws IllegalArgumentException if the bearing is invalid.
      */
     public Galleon(Compass bearing, IPosition pos) throws IllegalArgumentException {
         super(Galleon.NAME, bearing, pos);
@@ -36,10 +38,9 @@ public class Galleon extends Ship {
         }
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.Ship#getSize()
+    /**
+     * Returns the size of the ship.
+     * @return The size of the ship.
      */
     @Override
     public Integer getSize() {
