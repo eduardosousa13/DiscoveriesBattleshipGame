@@ -1,5 +1,5 @@
 /**
- *
+ * Represents a Frigate ship, which has a size of 4.
  */
 package iscteiul.ista.battleship;
 
@@ -8,8 +8,10 @@ public class Frigate extends Ship {
     private static final String NAME = "Fragata";
 
     /**
-     * @param bearing
-     * @param pos
+     * Creates a new Frigate ship with a given bearing and position.
+     * @param bearing The orientation of the ship.
+     * @param pos The starting position of the ship.
+     * @throws IllegalArgumentException if the bearing is invalid.
      */
     public Frigate(Compass bearing, IPosition pos) throws IllegalArgumentException {
         super(Frigate.NAME, bearing, pos);
@@ -29,10 +31,9 @@ public class Frigate extends Ship {
         }
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.Ship#getSize()
+    /**
+     * Returns the size of the ship.
+     * @return The size of the ship.
      */
     @Override
     public Integer getSize() {

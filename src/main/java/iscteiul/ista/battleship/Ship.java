@@ -1,5 +1,11 @@
 /**
+ * Represents the base class for all ships in the game.
+ * This class defines the common properties and behaviors of a ship,
+ * such as its category, bearing, and position.
  *
+ * Invariants:
+ * - A ship must always have a non-null bearing.
+ * - A ship must always have a non-null initial position.
  */
 package iscteiul.ista.battleship;
 
@@ -16,10 +22,12 @@ public abstract class Ship implements IShip {
     private static final String BARCA = "barca";
 
     /**
-     * @param shipKind
-     * @param bearing
-     * @param pos
-     * @return
+     * Factory method to build a ship of a specific kind.
+     *
+     * @param shipKind The kind of ship to build (e.g., "galeao", "fragata").
+     * @param bearing The bearing of the ship.
+     * @param pos The position of the ship.
+     * @return A new Ship instance of the specified kind.
      */
     static Ship buildShip(String shipKind, Compass bearing, Position pos) {
         Ship s;
@@ -53,9 +61,11 @@ public abstract class Ship implements IShip {
 
 
     /**
-     * @param category
-     * @param bearing
-     * @param pos
+     * Constructs a new Ship with the given category, bearing, and position.
+     *
+     * @param category The category of the ship.
+     * @param bearing The bearing of the ship.
+     * @param pos The initial position of the ship.
      */
     public Ship(String category, Compass bearing, IPosition pos) {
         assert bearing != null;
@@ -104,10 +114,11 @@ public abstract class Ship implements IShip {
         return bearing;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Checks if the ship is still floating.
+     * A ship is considered floating if at least one of its positions has not been hit.
      *
-     * @see battleship.IShip#stillFloating()
+     * @return true if the ship is still floating, false otherwise.
      */
     @Override
     public boolean stillFloating() {
