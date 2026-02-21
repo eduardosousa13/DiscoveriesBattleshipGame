@@ -1,27 +1,33 @@
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author fba
- *
+ * Main game logic for the Battleship (Discoveries) version.
+ * <p>
+ * Tracks the player's fleet, the shots taken, and basic statistics such as
+ * invalid/repeated shots, hits and sinks.
+ * </p>
  */
 public class Game implements IGame {
     private IFleet fleet;
     private List<IPosition> shots;
 
+    /** Number of shots outside the board limits. */
     private Integer countInvalidShots;
+    /** Number of valid shots repeated on an already targeted position. */
     private Integer countRepeatedShots;
+    /** Number of successful hits on ship positions. */
     private Integer countHits;
+    /** Number of ships that were fully sunk. */
     private Integer countSinks;
 
 
     /**
-     * @param fleet
+     * Creates a new game instance using the provided fleet.
+     *
+     * @param fleet the fleet used in this game (must not be {@code null})
      */
     public Game(IFleet fleet) {
         shots = new ArrayList<>();
@@ -30,10 +36,11 @@ public class Game implements IGame {
         this.fleet = fleet;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Fires a shot at the given position and updates game statistics.
      *
-     * @see battleship.IGame#fire(battleship.IPosition)
+     * @param pos target position for the shot
+     * @return the ship that was sunk by this shot; {@code null} otherwise
      */
     @Override
     public IShip fire(IPosition pos) {
@@ -108,10 +115,10 @@ public class Game implements IGame {
         return this.countSinks;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Returns the number of ships still afloat in the fleet.
      *
-     * @see battleship.IGame#getRemainingShips()
+     * @return number of ships that are not yet sunk
      */
     @Override
     public int getRemainingShips() {
