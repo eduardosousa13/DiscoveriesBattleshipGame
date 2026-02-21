@@ -1,10 +1,11 @@
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 import java.util.Objects;
 
+/**
+ * Default implementation of {@link IPosition} that stores board coordinates and
+ * gameplay state (occupied and hit flags).
+ */
 public class Position implements IPosition {
     private int row;
     private int column;
@@ -12,7 +13,10 @@ public class Position implements IPosition {
     private boolean isHit;
 
     /**
+     * Creates a board position with the given coordinates.
      *
+     * @param row row index
+     * @param column column index
      */
     public Position(int row, int column) {
         this.row = row;
@@ -21,20 +25,20 @@ public class Position implements IPosition {
         this.isHit = false;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Gets the row index of this position.
      *
-     * @see battleship.IPosition#getRow()
+     * @return row index
      */
     @Override
     public int getRow() {
         return row;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Gets the column index of this position.
      *
-     * @see battleship.IPosition#getColumn()
+     * @return column index
      */
     @Override
     public int getColumn() {
@@ -47,10 +51,11 @@ public class Position implements IPosition {
         return Objects.hash(column, isHit, isOccupied, row);
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Compares this position with another object based on coordinates.
      *
-     * @see battleship.IPosition#equals(java.lang.Object)
+     * @param otherPosition object to compare with
+     * @return true if both positions have the same row and column
      */
     @Override
     public boolean equals(Object otherPosition) {
@@ -64,50 +69,48 @@ public class Position implements IPosition {
         }
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Validates whether this position is adjacent to another one, including
+     * diagonals.
      *
-     * @see battleship.IPosition#isAdjacentTo(battleship.IPosition)
+     * @param other position to compare with
+     * @return true if the distance in row and column is at most one cell
      */
     @Override
     public boolean isAdjacentTo(IPosition other) {
         return (Math.abs(this.getRow() - other.getRow()) <= 1 && Math.abs(this.getColumn() - other.getColumn()) <= 1);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#occupy()
+    /**
+     * Marks this position as occupied.
      */
     @Override
     public void occupy() {
         isOccupied = true;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#shoot()
+    /**
+     * Marks this position as hit.
      */
     @Override
     public void shoot() {
         isHit = true;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Checks whether this position is occupied.
      *
-     * @see battleship.IPosition#isOccupied()
+     * @return true if occupied
      */
     @Override
     public boolean isOccupied() {
         return isOccupied;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Checks whether this position has been hit.
      *
-     * @see battleship.IPosition#isHit()
+     * @return true if hit
      */
     @Override
     public boolean isHit() {
