@@ -17,3 +17,14 @@
 | Navio de 3 canhões | Nau | Carrack | 3 | 2 |
 | Navio de 2 canhões | Caravela | Caravel | 2 | 3 |
 | Submarino | Barca | Barge | 1 | 4 |
+
+## Regras do jogo
+- Cada jogador coloca a sua frota na sua grelha.
+- Os jogadores jogam à vez.
+- Em cada turno, o jogador faz uma *rajada de 3 tiros*, indicando coordenadas (linha, coluna).
+- O adversário responde a cada tiro com:
+  - *Água* (miss) ou *Acerto* (hit)
+  - o *tipo de navio* atingido, quando aplicável
+  - e se o navio foi *afundado* (sunk)
+- O jogador regista os resultados na grelha do oponente (o que já descobriu).
+- O jogo termina quando um jogador afunda todos os navios do adversário.
