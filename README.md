@@ -28,3 +28,15 @@
   - e se o navio foi *afundado* (sunk)
 - O jogador regista os resultados na grelha do oponente (o que já descobriu).
 - O jogo termina quando um jogador afunda todos os navios do adversário.
+
+## Links úteis / recursos
+### Markdown
+- Markdown Cheatsheet (adam-p): https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet
+- GitHub Docs (formatação): https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+### Exemplo de README (inspiração)
+- Exemplo Battleship2: https://github.com/britoeabreu/Battleship2/blob/main/README.md
+
+### Navios (Descobrimentos)
+- Wikipedia (pesquisa): https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal
+  - Sugestão: procurar por “Galeão”, “Fragata”, “Nau”, “Caravela”.
